@@ -30,12 +30,17 @@
 ${paging}
 </button>
 <hr>
-<a href="/country/page/${paging.firstPage - 1}">Prev</a>
+<c:if test="${page.paging.firstGroup==false}">
+	<a href="/city/page/1">First</a>
+	<a href="/country/page/${paging.firstPage - 1}">Prev</a>
+</c:if>
 <c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
 	<a href="/country/page/${i}">${i}</a>
 </c:forEach>
-<a href="/country/page/${paging.lastPage + 1}">Next</a>
-
+<c:if test="${page.paging.lastGroup==false}">
+	<a href="/country/page/${paging.lastPage + 1}">Next</a>
+	<a href="/city/page/${page.paging.totalPage}">Last</a>
+</c:if>
 <script type="text/javascript">
 	function displayBox(event) {
 		$('.btn').toggleClass('btn-danger');

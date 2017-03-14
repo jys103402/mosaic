@@ -25,17 +25,18 @@
 </ol>
 <hr class="animated bounce">
 
-<a href="/city/page/1">First</a>
-<a href="/city/page/${page.paging.firstPage - 1}">Prev</a>
+<c:if test="${page.paging.lastGroup==false}">
+	<a href="/city/page/1">First</a>
+	<a href="/city/page/${page.paging.firstPage - 1}">Prev</a>
+</c:if>
 <c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage }">
 	<a href="/city/page/${i}">${i}</a>
 </c:forEach>
-<a href="/city/page/${page.paging.lastPage + 1}">Next</a>
-<a href="/city/page/${page.paging.totalPage}">Last</a>
 
-
-
-
+<c:if test="${page.paging.lastGroup==false}">
+	<a href="/city/page/${page.paging.lastPage + 1}">Next</a>
+	<a href="/city/page/${page.paging.totalPage}">Last</a>
+</c:if>
 
 
 </body>
