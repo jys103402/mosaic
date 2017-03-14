@@ -54,8 +54,14 @@ public class EmpMapperTests {
 		emp.setEname("xxx");
 		int cnt = empMapper.insert(emp);
 		System.out.println(empMapper.selectByEmpno(emp.getEmpno()));
-		
-		
 	}
+	@Test
+	public void test_delete(){
+		int empno=8000;
+		System.out.println("emp = " + empMapper.selectByEmpno(empno));
+		empMapper.deleteByEmpno(empno);
+		System.out.println("emp = " + empMapper.selectByEmpno(empno));
+	}
+	
 	
 }

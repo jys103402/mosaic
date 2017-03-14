@@ -2,6 +2,7 @@ package com.example.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -31,4 +32,7 @@ public interface EmpMapper {
 	Emp selectByEmpnoWithDept(int empno);
 	
 	int insert(Emp emp);
+	
+	@Delete("delete from emp where empno=#{empno}")
+	int deleteByEmpno(int empno);
 }
