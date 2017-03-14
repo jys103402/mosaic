@@ -44,7 +44,7 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/dept/list">Dept</a></li>
-						<li><a href="/emp/list">Emp</a></li>
+						<li><a href="/emp/page/1">Emp</a></li>
 						<li><a href="/emp/salgrade">Salgrade</a></li>
 					</ul>
 				</li>
